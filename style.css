@@ -1,0 +1,65 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: white;
+  background-color: #000715; /* 000d15 //   */
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: monospace;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.testBtn {
+  width: 250px;
+  height: 100px;
+  border: none;
+  border-radius: 1000px;
+  background-color: white;
+  transition: all 250ms ease;
+}
+
+.transition:hover {
+  width: 300px;
+  background-color: rgb(0, 255, 170);
+}
+
+.shadow:hover {
+  box-shadow: 0 1.9rem 2.5rem rgba(255, 255, 255, 0.3);
+  transform: translate(0, -1rem);
+}
+
+::after {
+  transition: all 250ms ease;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.5rem;
+  background-color: rgb(255, 208, 0);
+}
+.invert_border:hover ::after {
+  width: 100%;
+}
