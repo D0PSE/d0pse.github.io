@@ -1,179 +1,136 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+@font-face {
+  font-family: "aquire";
+  src: url(fonts/Aquire-BW0ox.otf);
+  font-style: normal;
+  font-weight: 100;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Lato", sans-serif;
   color: white;
-  background-color: #000715; /* 000d15 //   */
+  background-color: #282c34;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 
-#wrapper {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+.container {
   position: relative;
   width: 100%;
-  height: 100%;
 }
-
-h2 {
-  color: #000715;
-  font-size: 2rem;
-  font-family: monospace;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-}
-
-.testBtn {
-  width: 250px;
-  height: 100px;
-  border: none;
-  border-radius: 1000px;
-  background-color: white;
-  transition: all 250ms ease;
-}
-
-.transition:hover {
-  width: 300px;
-  background-color: rgb(0, 255, 170);
-}
-
-.shadow:hover {
-  box-shadow: 0 1.9rem 2.5rem rgba(0, 255, 170, 0.7);
-  transform: translate(0, -1rem);
-}
-
-.txt_invert_border {
-  width: 250px;
-  height: 100px;
-  background-color: white;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 250ms ease;
+.background-container {
   position: relative;
+  width: 100%;
 }
-::after {
-  transition: all 250ms ease;
-  content: "";
-  display: block;
+
+/* #region Navbar */
+.navbar {
+  font-family: aquire;
+  font-weight: 100;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  max-height: 23px;
+  /* width: 100%;
+  position: absolute; */
+}
+.navbar > *:nth-child(2) {
+  margin-left: auto;
+}
+.navbar > * {
+  padding: 5px;
+}
+.navbar > *:hover {
+  border-bottom: solid white;
+}
+/* #endregion */
+
+.sun {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0.5rem;
-  background-color: rgb(0, 255, 170);
-}
-.invert_border:hover ::after {
-  width: 100%;
-}
 
-div#circle {
   width: 200px;
   height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 15px solid white;
-  border-radius: 50%;
-  position: relative;
-  animation: circle 2s infinite forwards;
-}
-div#square {
-  width: 75px;
-  height: 75px;
-  border: 5px solid rgb(0, 255, 170);
-  animation: square 2s infinite ease-in-out alternate-reverse;
-}
-@keyframes circle {
-  0% {
-    border-color: rgb(0, 255, 170);
-    transform: scale(1);
-  }
-  25% {
-    border-color: white;
-    transform: scale(1.1);
-  }
-  50% {
-    border-color: rgb(0, 255, 170);
-    transform: scale(1.3);
-  }
-  75% {
-    border-color: white;
-    transform: scale(1.1);
-  }
-  100% {
-    border-color: rgb(0, 255, 170);
-    transform: scale(1);
-  }
-}
-@keyframes square {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    border-color: rgb(0, 255, 170);
-    border-width: 10px;
-  }
-  50% {
-    border-color: white;
-    border-width: 20px;
-  }
-  75% {
-    border-color: rgb(0, 255, 170);
-    border-width: 30px;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-width: 5px;
-  }
+  background-color: aliceblue;
+  border-radius: 100%;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.btnSpin {
-  width: 150px;
-  height: 60px;
-  border: none;
-  background-color: white;
-  color: black;
-  font-size: 22px;
+/* #region Mountains */
+.mountain_right {
+  position: absolute;
+  height: 400px;
+  width: auto;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 600px;
+}
+.mountain_left {
+  position: absolute;
+  height: 400px;
+  width: auto;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(-1);
+  margin-left: -600px;
+}
 
-  animation: spin 2s infinite alternate;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-play-state: paused;
+/* #region Einfärbung */
+
+/* TAG */
+/* .mtn_dark {
+  filter: invert(56%) sepia(0%) saturate(1665%) hue-rotate(188deg)
+    brightness(90%) contrast(73%);
 }
-.spinning:hover {
-  animation-play-state: running;
+.mtn_mid {
+  filter: invert(73%) sepia(15%) saturate(6%) hue-rotate(314deg) brightness(88%)
+    contrast(94%);
 }
-@keyframes spin {
-  0% {
-    width: 150px;
-    height: 60px;
-    border-radius: 0;
-  }
-  33% {
-    width: 300px;
-    height: 60px;
-    border-radius: 0;
-  }
-  66% {
-    width: 300px;
-    height: 300px;
-    border-radius: 0;
-    transform: rotate(0);
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    transform: rotate(360deg);
-  }
+.mtn_light {
+  filter: invert(100%) sepia(41%) saturate(3652%) hue-rotate(332deg)
+    brightness(97%) contrast(91%);
+} */
+
+/* ABEND */
+/* .mtn_dark {
+  filter: invert(16%) sepia(9%) saturate(2994%) hue-rotate(190deg)
+    brightness(97%) contrast(92%);
 }
+.mtn_mid {
+  filter: invert(25%) sepia(63%) saturate(416%) hue-rotate(191deg)
+    brightness(93%) contrast(88%);
+}
+.mtn_light {
+  filter: invert(61%) sepia(77%) saturate(2688%) hue-rotate(331deg)
+    brightness(99%) contrast(95%);
+} */
+
+/* NACHT */
+.mtn_dark {
+  filter: invert(6%) sepia(8%) saturate(7500%) hue-rotate(203deg)
+    brightness(85%) contrast(105%);
+}
+.mtn_mid {
+  filter: invert(6%) sepia(22%) saturate(5302%) hue-rotate(218deg)
+    brightness(96%) contrast(100%);
+}
+.mtn_light {
+  filter: invert(84%) sepia(4%) saturate(2039%) hue-rotate(190deg)
+    brightness(90%) contrast(86%);
+}
+
+/* #endregion */
+
+.mtn_line {
+  opacity: 0.5;
+}
+/* #endregion */
