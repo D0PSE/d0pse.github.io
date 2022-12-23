@@ -30,6 +30,8 @@ a {
 
 /* #region Navbar */
 .navbar {
+  position: absolute;
+  width: 100%;
   font-family: aquire;
   font-weight: 100;
   display: flex;
@@ -52,16 +54,35 @@ a {
 }
 /* #endregion */
 
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+
+  /* TAG */
+  /* background-color: rgb(44, 167, 248);
+  background-image: linear-gradient(rgb(23, 20, 223), rgb(44, 167, 248)); */
+
+  /* NACHT */
+  background-color: #282c34;
+  background-image: linear-gradient(#282c34, #424b74);
+}
+
 .sun {
   position: absolute;
 
   width: 200px;
   height: 200px;
-  background-color: aliceblue;
   border-radius: 100%;
   top: 180px;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  /* TAG */
+  /* background-color: rgb(230, 230, 42); */
+
+  /* NACHT */
+  background-color: aliceblue;
 }
 
 /* #region Mountains */
@@ -133,4 +154,56 @@ a {
 .mtn_line {
   opacity: 0.5;
 }
+/* #endregion */
+
+/* #region Clouds */
+
+.cloud1 {
+  position: absolute;
+  height: 120px;
+  width: auto;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 280px;
+}
+
+.cloud2 {
+  position: absolute;
+  height: 120px;
+  width: auto;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(-1);
+  margin-left: -280px;
+}
+
+/* #region Einfärbrung */
+
+/* TAG */
+/* .cloud_light {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(332deg)
+    brightness(103%) contrast(101%);
+}
+.cloud_dark {
+  filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(176deg) brightness(84%)
+    contrast(80%);
+} */
+
+/* Nacht */
+.cloud_light {
+  filter: invert(84%) sepia(4%) saturate(2039%) hue-rotate(190deg)
+    brightness(90%) contrast(86%);
+}
+.cloud_dark {
+  filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(176deg) brightness(34%)
+    contrast(90%);
+}
+
+/* #endregion */
+
+.cloud_line {
+  opacity: 0.5;
+}
+
 /* #endregion */
